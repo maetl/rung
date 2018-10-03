@@ -14,6 +14,13 @@
     "esm": "^3.0.84",
     "rollup": "^0.66.2"
   },
+  "main": "dist/rung.cjs.js",
+  "module": "dist/rung.esm.js",
+  "browser": "rung.js",
+  "files": [
+    "rung.js",
+    "dist"
+  ],
   "ava": {
     "require": [
       "esm"
