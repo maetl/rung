@@ -1,19 +1,22 @@
 {
   "name": "rung",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A randomness toolkit",
   "repository": "git@github.com:maetl/rung",
   "author": "Mark Rickerby",
   "license": "MIT",
-  "devDependencies": {
-    "browserify": "^8.0.3",
-    "coffee-script": "latest",
-    "jasmine-node": "latest",
-    "uglify-js": "^2.4.16",
-    "watchify": "^2.2.1"
-  },
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node --coffee spec",
-    "dist": "./node_modules/.bin/coff"
+    "build": "rollup -c",
+    "test": "ava --verbose"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "esm": "^3.0.84",
+    "rollup": "^0.66.2"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
   }
 }
