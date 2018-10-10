@@ -1,6 +1,6 @@
 import test from "ava";
 import fixed from "../src/algorithms/fixed";
-import Random from "../src/rung";
+import Random from "../src/random";
 
 test("angle in radians", t => {
   const rng = new Random(fixed());
