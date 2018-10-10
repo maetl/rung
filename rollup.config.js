@@ -12,8 +12,25 @@ export default [
 	{
 		input: 'src/rung.js',
 		output: [
-			{ file: pkg.main, format: 'cjs' },
-			{ file: pkg.module, format: 'es' }
+			{ file: pkg.main, format: 'cjs' }
+		]
+	},
+	{
+		input: 'src/algorithms/alea.js',
+		output: [
+			{ file: "lib/alea.js", format: 'cjs' }
+		]
+	},
+	{
+		input: 'src/algorithms/mersenne-twister.js',
+		output: [
+			{ file: "lib/mersenne-twister.js", format: 'cjs' }
+		]
+	},
+	{
+		input: 'src/algorithms/xorshift.js',
+		output: [
+			{ file: "lib/xorshift.js", format: 'cjs' }
 		]
 	}
 ];
