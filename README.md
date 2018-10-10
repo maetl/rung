@@ -1,6 +1,6 @@
 # Rung
 
-A randomness toolkit for browser-based game development, simulation and generative methods.
+A randomness toolkit for browser-based game development, simulations and generative methods.
 
 ## Status
 
@@ -13,8 +13,7 @@ For historical reasons, `Math.random`—JavaScript’s native function for gener
 
 Additionally, `Math.random` only provides values on the half-open interval [0..1), while many models and mechanics work with values as integers, often clamped between upper and lower bounds.
 
-Rung exists to bridge this gap. It provides a small suite of 32 bit seedable pseudorandom number generators wrapped with an integer-focused API, suitable for use in browser-based game development, simulation and generative methods.
-
+Rung exists to bridge this gap. It provides a small suite of 32 bit seedable pseudorandom number generators wrapped with an integer-focused API, suitable for use in browser-based game development, simulations and generative methods.
 
 ## Install
 
@@ -77,15 +76,15 @@ In all of these use cases, more specialised and well-tested algorithms exist tha
 
 There’s an interesting school of thought arguing that languages and software libraries should offer cryptographically secure RNGs by default and PRNGs should be avoided altogether. Rather than make the wrong thing hard to do, make it impossible!
 
-This makes sense if you believe that simple APIs for random number generation provide too much flexibility and affordance for abuse, but this is a design principle I disagree with as a whole. If your code is calculating a damage modifier from a weapon hit or deciding whether to render a floor tile or wall tile at point {x,y}, a sophisticated cryptographically secure RNG is wildly overengineered. It’s okay to trust people to use the right tool for the job.
+This makes sense if you believe that the benefits of simple APIs for random number generation are outweighed by the harm caused when they’re abused, but this is a design principle I disagree with as a whole. If your code is calculating a damage modifier from a simulated weapon hit or deciding whether to render a floor tile or wall tile at point {x,y} in a dungeon, an intricate cryptographically secure RNG is unrestrainedly overengineered. It’s okay to trust people to use the right tool for the job.
 
 ### Precision
 
-Most high quality modern prng algorithms use 64 bit unsigned integers to represent their internal state which poses a big problem for implementing them in JavaScript where all numbers are represented in the IEEE-754 64 bit floating point format which—after the sign and exponent—leaves 53 bits for the mantissa.
+Most high quality modern prng algorithms use 64 bit unsigned integers to represent their internal state which poses a big problem for implementing them in JavaScript where all numbers are represented in the IEEE-754 floating point format which—after the sign and exponent—leaves 53 bits for the mantissa.
 
-While it *is* possible to handle 64 bit addition and multiplication in JavaScript, it’s annoyingly laborious to implement (splitting values into high and low chunks and operating on them separately) and will degrade performance. Despite whatever level of precision we use to represent the internal state of an rng, if we want to return a `Number` type, we’ll aways be constrained to dumping less than 64 bits of randomness into the output value.
+While it *is* possible to handle 64 bit addition and multiplication in JavaScript, it’s annoyingly laborious to implement (splitting values into high and low chunks and operating on them separately) and will degrade performance. Despite whatever level of precision we use to represent the internal state of the RNG, if we want to return a `Number` type, we’ll aways be constrained to dumping less than 64 bits of randomness into the output value.
 
-This might be okay though. Although several of the widely used 32 bit rng algorithms are known to fail highly precise statistical tests of randomness, we just have to accept this as a limitation. As long as the generators we use are fast enough—ie: not orders of magnitude slower than `Math.random`—and exhibit a similar period length and quality of output to `Math.random`, they can be successfully used in games, simulations and generative methods.
+This might be okay though. Although several of the widely used 32 bit algorithms are known to fail highly precise statistical tests of randomness, we just have to accept this as a limitation. As long as the generators we use are fast enough—ie: not orders of magnitude slower than `Math.random`—and exhibit a similar period length and quality of output to `Math.random`, they can be successfully used for games, simulations and generative methods.
 
 ### Rejection Sampling
 
