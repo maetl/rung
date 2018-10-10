@@ -1,6 +1,6 @@
 {
   "name": "rung",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A randomness toolkit",
   "repository": "git@github.com:maetl/rung",
   "author": "Mark Rickerby",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "esm": "^3.0.84",
+    "pureimage": "^0.1.6",
     "rollup": "^0.66.2"
   },
   "main": "dist/rung.cjs.js",
