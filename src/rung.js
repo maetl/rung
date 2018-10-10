@@ -1,34 +1,44 @@
-class Standard {
-  value() {
-    return Math.random();
-  }
-}
-
-class Fixed {
-  value() {
-    return 0.4770875762153106;
-  }
-}
-
+/**
+ *
+ */
 class Random {
-  constructor() {
-    this.source = new Fixed();
+  constructor(generator) {
+    this.next = generator;
   }
 
+  /**
+   * Returns a random number within the given range.
+   *
+   * @param {number} min Minimum value of numeric range (inclusive)
+   * @param {number} max Maximum value of numeric range (inclusive)
+   */
   number(min, max) {
     if (max == undefined) {
       max = min;
       min = 0;
     }
-    return this.source.value() * (max - min) + min;
+    return this.next() * (max - min) + min;
   }
 
+  /**
+   * Returns a random integer within the given range.
+   *
+   * @param {number} min Minimum value of integer range (inclusive)
+   * @param {number} max Maximum value of integer range (inclusive)
+   */
   integer(min, max) {
     if (max == undefined) {
       max = min;
       min = 0;
     }
-    return Math.floor(this.source.value() * (max - min) + min);
+    return Math.floor(this.next() * (max - min) + min);
+  }
+
+  /**
+   * A boolean coin toss.
+   */
+  boolean() {
+    return this.next() >= 0.5 ? true : false;
   }
 
   percentage(precision) {
