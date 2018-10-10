@@ -29,6 +29,7 @@ Get a seeded instance of the random number generator:
 ```js
 import rung from "rung"
 
+// TODO
 const rng = rung(524287)
 ```
 
@@ -68,7 +69,7 @@ rng.angle()
 
 ### Insecure by Design
 
-If you’ve gotten to the point of reading random people’s personal RNG libraries on GitHub, you almost certainly know this already and it probably doesn’t need to be said, but I’ll say it anyway as a precaution.
+If you’ve gotten to the point of perusing people’s personal RNG libraries on GitHub, you almost certainly know this already and it probably doesn’t need to be said, but I’ll say it anyway as a precaution.
 
 None of these methods for random number generation are cryptographically secure. Rung should never be used in any situation where an adversary could cause problems by predicting the next number or sequence of numbers. Rung shouldn’t be used for hashing or ID generation either.
 
