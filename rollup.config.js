@@ -16,21 +16,9 @@ export default [
 		]
 	},
 	{
-		input: 'src/algorithms/alea.js',
+		input: 'src/algorithms.js',
 		output: [
-			{ file: "lib/alea.js", format: 'cjs' }
-		]
-	},
-	{
-		input: 'src/algorithms/mersenne-twister.js',
-		output: [
-			{ file: "lib/mersenne-twister.js", format: 'cjs' }
-		]
-	},
-	{
-		input: 'src/algorithms/xorshift.js',
-		output: [
-			{ file: "lib/xorshift.js", format: 'cjs' }
+			{ file: "algorithms.js", format: 'cjs' }
 		]
 	}
 ];

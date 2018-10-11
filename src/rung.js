@@ -5,4 +5,5 @@ function rung(seed) {
   return new Random(mt(seed));
 }
 
+rung.Random = Random;
 export default rung;

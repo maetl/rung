@@ -23,13 +23,42 @@ npm install rung
 
 ## Usage
 
-Get a seeded instance of the random number generator:
+Get a seeded instance of the default random number generator (Mersenne Twister):
+
+### ESM
 
 ```js
 import rung from "rung"
 
-// TODO
 const rng = rung(524287)
+```
+
+### CommonJS
+
+```js
+const rung = require("rung")
+
+const rng = rung(524287)
+```
+
+Configure with a specific PRNG algorithm (`alea`, `xorshift` or `mersenne-twister`):
+
+### ESM
+
+```js
+import Random from "rung/src/random"
+import alea from "rung/src/algorithms/alea"
+
+const rng = new Random(alea(524287))
+```
+
+### CommonJS
+
+```js
+const { Random } = require("rung")
+const { alea } = require("rung/algorithms")
+
+const rng = new Random(alea(524287))
 ```
 
 ## API
