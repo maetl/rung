@@ -1,5 +1,7 @@
 node_modules
 NOTES.md
-lib
+/index.js
 /rung.js
+/algorithms.js
 experiments
+docs
