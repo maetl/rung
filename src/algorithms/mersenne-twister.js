@@ -11,14 +11,14 @@ const TEMPERING_MASK_B = 0xefc60000;
 
 function mersenneTwister(seed) {
   const state = new Array(N_DEGREE);
-  let index;
+  let index, s, lhs, rhs;
 
   state[0] = seed >>> 0;
 
   for (index = 1; index < N_DEGREE; index++) {
-    const s = state[index-1] ^ (state[index-1] >>> 30);
-    const lhs = (((s & 0xffff0000) >>> 16) * F_MT19937) << 16;
-    const rhs = (s & 0x0000ffff) * F_MT19937;
+    s = state[index-1] ^ (state[index-1] >>> 30);
+    lhs = (((s & 0xffff0000) >>> 16) * F_MT19937) << 16;
+    rhs = (s & 0x0000ffff) * F_MT19937;
     state[index] = lhs + rhs + index;
     state[index] >>>= 0;
   }
