@@ -61,6 +61,25 @@ const { alea } = require("rung/algorithms")
 const rng = new Random(alea(524287))
 ```
 
+Generate a seed value from a given string:
+
+### ESM
+
+```js
+import rung, { seed } from "rung"
+
+const rng = rung(seed("abcdefghijklmnopqrstuvwxyz"))
+```
+
+### CommonJS
+
+```js
+const rung = require("rung")
+const seed = rung.seed
+
+const rng = rung(seed("abcdefghijklmnopqrstuvwxyz"))
+```
+
 ## API
 
 Get an integer between 0 and 10 (inclusive):
