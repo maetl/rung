@@ -18,6 +18,9 @@
   "main": "index.js",
   "module": "src/rung.js",
   "browser": "rung.js",
+  "exports": {
+    ".": "./src"
+  },
   "files": [
     "rung.js",
     "index.js",
