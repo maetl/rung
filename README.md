@@ -5,7 +5,7 @@ A randomness toolkit for browser-based game development, simulations and generat
 ## Status
 
 [![npm](https://img.shields.io/npm/v/rung.svg)](https://npmjs.org/package/rung)
-[![travis](https://img.shields.io/travis/maetl/rung.svg)](https://travis-ci.org/maetl/rung)
+[![github](https://img.shields.io/github/workflow/status/maetl/rung/Node.js%20CI)](https://github.com/maetl/rung/actions)
 
 ## Overview
 
@@ -148,4 +148,4 @@ The most promising future direction is probably with WebAssembly, which supports
 
 ## License
 
-This package is copyright 2015-2018 Mark Rickerby and distributed freely under the terms of the MIT License. See the LICENSE file packaged with this software distribution.
+This package is copyright 2015-2022 Mark Rickerby and distributed freely under the terms of the MIT License. See the LICENSE file packaged with this software distribution.
