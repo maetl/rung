@@ -14,10 +14,10 @@ test("integer with max exclusive", t => {
 
 test("integer within max range", t => {
   const rng = new Random(fixed());
-  t.is(rng.integer(6), 2);
+  t.is(rng.integer(6), 3);
 });
 
 test("integer within min and max range", t => {
   const rng = new Random(fixed());
-  t.is(rng.integer(10, 20), 14);
+  t.is(rng.integer(10, 20), 15);
 });

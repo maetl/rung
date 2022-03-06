@@ -14,7 +14,7 @@ class Random {
    * Returns an approximately uniform decimal number within the given range.
    *
    * @param {number} min Minimum value of numeric range (inclusive)
-   * @param {number} max Maximum value of numeric range (inclusive)
+   * @param {number} max Maximum value of numeric range (exclusive)
    */
   decimal(min, max) {
     if (max == undefined) {
@@ -35,7 +35,7 @@ class Random {
       max = min;
       min = 0;
     }
-    return Math.floor(this.next() * (max - min) + min);
+    return Math.floor(this.next() * (max - min + 1) + min);
   }
 
   /**
@@ -47,7 +47,7 @@ class Random {
 
   percentage(precision) {
     if (precision == undefined) {
-      return this.integer(101);
+      return this.integer(100);
     } else {
       const number = this.decimal(100 + Number.MIN_VALUE);
       const decimalPattern = '^\\d+(?:\.\\d{0,' + precision + '})?';
