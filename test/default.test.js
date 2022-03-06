@@ -1,5 +1,5 @@
 import test from "ava";
-import rung from "../src/rung";
+import rung from "../src/rung.js";
 
 test("generate internal seed if not provided", t => {
   const rng = rung();

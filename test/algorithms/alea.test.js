@@ -1,5 +1,5 @@
 import test from "ava";
-import alea from "../../src/algorithms/alea";
+import alea from "../../src/algorithms/alea.js";
 
 test("seed produces repeatable state sequence", t => {
   const random1 = alea(11234546789);

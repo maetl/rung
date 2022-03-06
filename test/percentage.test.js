@@ -1,6 +1,6 @@
 import test from "ava";
-import fixed from "../src/algorithms/fixed";
-import Random from "../src/random";
+import fixed from "../src/algorithms/fixed.js";
+import Random from "../src/random.js";
 
 test("percentage as integer", t => {
   const rng = new Random(fixed());

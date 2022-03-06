@@ -1,5 +1,5 @@
 import test from "ava";
-import mt from "../../src/algorithms/mersenne-twister";
+import mt from "../../src/algorithms/mersenne-twister.js";
 
 test("seed produces repeatable state sequence", t => {
   const random1 = mt(11234546789);

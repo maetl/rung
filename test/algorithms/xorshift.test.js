@@ -1,5 +1,5 @@
 import test from "ava";
-import xorshift from "../../src/algorithms/xorshift";
+import xorshift from "../../src/algorithms/xorshift.js";
 
 test("seed produces repeatable state sequence", t => {
   const random1 = xorshift(11234546789);

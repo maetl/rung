@@ -1,5 +1,5 @@
 import test from "ava";
-import seed from "../src/seed";
+import seed from "../src/seed.js";
 
 test("returns number by default", t => {
   const seed1 = seed();

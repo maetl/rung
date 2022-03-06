@@ -1,6 +1,6 @@
 import alea from "./algorithms/alea";
-import mersenneTwister from "./algorithms/mersenne-twister";
-import xorshift from "./algorithms/xorshift";
+import mersenneTwister from "./algorithms/mersenne-twister.js";
+import xorshift from "./algorithms/xorshift.js";
 
 export {
   alea,

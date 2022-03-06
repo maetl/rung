@@ -1,4 +1,4 @@
-import murmix from "./algorithms/murmix";
+import murmix from "./algorithms/murmix.js";
 
 function seed(key=new Date().toString(), seeds=1) {
   const result = murmix(key, seeds);

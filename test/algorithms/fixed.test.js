@@ -1,5 +1,5 @@
 import test from "ava";
-import fixed from "../../src/algorithms/fixed";
+import fixed from "../../src/algorithms/fixed.js";
 
 test("fixed constant for testing", t => {
   const random = fixed();

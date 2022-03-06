@@ -1,6 +1,7 @@
 {
   "name": "rung",
   "version": "0.6.0",
+  "type": "module",
   "description": "A randomness toolkit for browser-based game development, simulations and generative methods.",
   "repository": "git@github.com:maetl/rung",
   "author": "Mark Rickerby",
@@ -10,8 +11,7 @@
     "test": "ava --verbose"
   },
   "devDependencies": {
-    "ava": "^1.4.1",
-    "esm": ">=3.1.0",
+    "ava": "^4.0.1",
     "pureimage": "^0.1.6",
     "rollup": "^0.66.2"
   },
@@ -26,10 +26,5 @@
     "index.js",
     "algorithms.js",
     "src"
-  ],
-  "ava": {
-    "require": [
-      "esm"
-    ]
-  }
+  ]
 }

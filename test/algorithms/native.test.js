@@ -1,5 +1,5 @@
 import test from "ava";
-import native from "../../src/algorithms/native";
+import native from "../../src/algorithms/native.js";
 
 test("native generator is not seedable", t => {
   const random1 = native();
