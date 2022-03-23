@@ -1,6 +1,10 @@
 class Random {
-  constructor(generator) {
-    this.next = generator;
+  /**
+   * Create a new instance using the supplied sequence function.
+   * @param {fn:} generator  [description]
+   */
+  constructor(next) {
+    this.next = next;
   }
 
   /**

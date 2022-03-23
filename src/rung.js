@@ -1,12 +1,24 @@
 import Random from "./random.js";
-import seed from "./seed.js";
-import mt from "./algorithms/mersenne-twister.js";
+import * as algorithms from "./algorithms.js";
 
-function rung(seed = Date.now()) {
-  return new Random(mt(seed));
+function seed(key=new Date().toString()) {
+  const result = algorithms.murmix(key, 1);
+  return result[0];
 }
 
-rung.Random = Random;
-rung.seed = seed;
+function seeds(key=new Date().toString(), count=1) {
+  return algorithms.murmix(key, count);
+}
+
+function rung(_seed = Date.now()) {
+  return new Random(algorithms.mersenneTwister(_seed));
+}
+
+export {
+  Random,
+  seed,
+  seeds,
+  algorithms
+}
 
 export default rung;
