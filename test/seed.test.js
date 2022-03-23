@@ -1,5 +1,5 @@
 import test from "ava";
-import seed from "../src/seed.js";
+import { seed, seeds } from "../src/rung.js";
 
 test("returns number by default", t => {
   const seed1 = seed();
@@ -15,7 +15,7 @@ test("returns consistent value with given key", t => {
 });
 
 test("returns sequence of results with given count", t => {
-  const [seed1, seed2, seed3, seed4] = seed("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 4);
+  const [seed1, seed2, seed3, seed4] = seeds("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 4);
 
   t.is(seed1, 4178526661);
   t.is(seed2, 2754842588);
