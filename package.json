@@ -19,14 +19,14 @@
     "typescript": "^4.6.2"
   },
   "module": "src/rung.js",
-  "main": "rung.cjs.js",
+  "main": "rung.bundle.cjs",
   "browser": "src/rung.js",
   "type": "module",
   "sideEffects": false,
   "exports": {
     ".": {
       "import": "./src/rung.js",
-      "require": "./rung.cjs.js"
+      "require": "./rung.bundle.cjs"
     },
     "./random": "./src/random.js",
     "./algorithms/": "./src/algorithms/"
