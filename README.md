@@ -21,11 +21,55 @@ Rung exists to bridge this gap. It provides a small suite of 32 bit seedable pse
 npm install rung
 ```
 
-## Usage
+## Importing
 
-Get a seeded instance of the default random number generator (Mersenne Twister):
+The library is set up for importing via ES modules by default.
 
 ### ESM
+
+```js
+// main initializer
+import rung from "rung"
+
+// seed mixing functions
+import { seed , seeds } from "rung"
+
+// Random class
+import Random from "rung/random"
+
+// Various PRNG algorithms
+import mersenneTwister from "rung/algorithms/mersenne-twister"
+import alea from "rung/algorithms/alea"
+import mulberry from "rung/algorithms/mulberry"
+```
+
+### CommonJS
+
+An alternative CommonJS bundle is also provided for use in NodeJS contexts where `type: module` can not be used.
+
+```js
+// main initializer
+const { rung } = require("rung")
+
+// seed mixing functions
+const { seed , seeds } = require("rung")
+
+// Random class
+const { Random } = require("rung")
+
+// Various PRNG algorithms
+const { algorithms } = require("rung")
+```
+
+### Vendor Bundle
+
+If you want to manually copy a vendor bundle into your browser app or link to it without using NPM, ESM or CommonJS, use the [minified IIFE bundle on Unpkg](https://unpkg.com/rung/rung.min.js) or get the source from the [rung.min.js](/maetl/rung/blob/main/rung.min.js) file in this repo. 
+
+## Usage
+
+### Constructing Instances
+
+Get a seeded instance of the default random number generator (Mersenne Twister):
 
 ```js
 import rung from "rung"
@@ -33,37 +77,16 @@ import rung from "rung"
 const rng = rung(524287)
 ```
 
-### CommonJS
+Configure with a specific PRNG algorithm:
 
 ```js
-const rung = require("rung")
-
-const rng = rung(524287)
-```
-
-Configure with a specific PRNG algorithm (`alea`, `xorshift` or `mersenne-twister`):
-
-### ESM
-
-```js
-import Random from "rung/src/random"
-import alea from "rung/src/algorithms/alea"
-
-const rng = new Random(alea(524287))
-```
-
-### CommonJS
-
-```js
-const { Random } = require("rung")
-const { alea } = require("rung/algorithms")
+import Random from "rung/random"
+import alea from "rung/algorithms/alea"
 
 const rng = new Random(alea(524287))
 ```
 
 Generate a seed value from a given string:
-
-### ESM
 
 ```js
 import rung, { seed } from "rung"
@@ -71,16 +94,7 @@ import rung, { seed } from "rung"
 const rng = rung(seed("abcdefghijklmnopqrstuvwxyz"))
 ```
 
-### CommonJS
-
-```js
-const rung = require("rung")
-const seed = rung.seed
-
-const rng = rung(seed("abcdefghijklmnopqrstuvwxyz"))
-```
-
-## API
+## Random API
 
 Get an integer between 0 and 10 (inclusive):
 
