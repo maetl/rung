@@ -1,6 +1,6 @@
 {
   "name": "rung",
-  "version": "0.9.2",
+  "version": "0.10.0",
   "description": "A randomness toolkit for browser-based game development, simulations and generative methods.",
   "repository": "git@github.com:maetl/rung",
   "author": "Mark Rickerby",

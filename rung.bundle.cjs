@@ -50,8 +50,36 @@ class Random {
    * A boolean coin toss.
    */
   boolean() {
-    return this.next() >= 0.5 ? true : false;
+    return this.next() > 0.5;
   }
+
+  /**
+   * Has a likelihood of returning true approximately equal to the given odds.
+   *
+   * For best results, the given odds must be between 0 and 1. Any ratio <= 0
+   * will always return false and any ratio >= 1 will always return true.
+   *
+   * @example
+   * // A one in ten chance
+   * random.chance(0.1)
+   *
+   * // A three in four chance
+   * random.chance(0.75)
+   *
+   * @example <caption>Use the division operator to express fractions.</caption>
+   * // A one in three chance
+   * random.chance(1 / 3)
+   *
+   * // A nine in ten chance
+   * random.chance(9 / 10)
+   *
+   * @param  {number} odds Odds of returning true as a decimal ratio
+   * @return {boolean}
+   */
+  chance(odds) {
+    return this.next() < odds;
+  }
+
 
   percentage(precision) {
     if (precision == undefined) {
@@ -220,7 +248,7 @@ function rung(_seed = Date.now()) {
   return new Random(mersenneTwister(_seed));
 }
 
-var version = "0.9.2";
+var version = "0.10.0";
 
 exports.Random = Random;
 exports.algorithms = algorithms;
