@@ -32,7 +32,7 @@ The library is set up for importing via ES modules by default.
 import rung from "rung"
 
 // seed mixing functions
-import { seed , seeds } from "rung"
+import { seed, seeds } from "rung"
 
 // Random class
 import Random from "rung/random"
@@ -52,7 +52,7 @@ An alternative CommonJS bundle is also provided for use in NodeJS contexts where
 const { rung } = require("rung")
 
 // seed mixing functions
-const { seed , seeds } = require("rung")
+const { seed, seeds } = require("rung")
 
 // Random class
 const { Random } = require("rung")
@@ -63,7 +63,7 @@ const { algorithms } = require("rung")
 
 ### Vendor Bundle
 
-If you want to manually copy a vendor bundle into your browser app or link to it without using NPM, ESM or CommonJS, use the [minified IIFE bundle on Unpkg](https://unpkg.com/rung/rung.min.js) or get the source from the [rung.min.js](/maetl/rung/blob/main/rung.min.js) file in this repo. 
+If you want to manually copy a vendor bundle into your browser app or link to it without using NPM, ESM or CommonJS, use the [minified IIFE bundle on Unpkg](https://unpkg.com/rung/rung.min.js) or get the source from the [rung.min.js](/maetl/rung/blob/main/rung.min.js) file in this repo.
 
 ## Usage
 
@@ -114,10 +114,10 @@ Get the result of a boolean coin toss (`true` or `false`):
 rng.boolean()
 ```
 
-Get a percentage value between 0% and 100% (inclusive):
+Get a chance of being true from the given likelihood:
 
 ```js
-rng.percentage()
+rng.chance(1 / 3)
 ```
 
 Get an angle in radians:

@@ -76,7 +76,8 @@ class Random {
     return this.next() < odds;
   }
 
-
+  // TODO: deprecate this as it hasn’t proven useful and the behaviour
+  // is already covered by `integer` and `decimal`.
   percentage(precision) {
     if (precision == undefined) {
       return this.integer(100);
