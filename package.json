@@ -6,7 +6,7 @@
   "author": "Mark Rickerby",
   "license": "MIT",
   "scripts": {
-    "prepare": "npm run build",
+    "prepublish": "npm run build",
     "build": "rollup -c",
     "compile": "tsc",
     "test": "ava --verbose"
@@ -32,10 +32,10 @@
     "./algorithms/": "./src/algorithms/"
   },
   "files": [
-    "lib",
     "src",
     "README.md",
     "LICENSE",
+    "rung.bundle.cjs",
     "rung.min.js"
   ]
 }
