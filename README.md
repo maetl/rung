@@ -63,7 +63,7 @@ const { algorithms } = require("rung")
 
 ### Vendor Bundle
 
-If you want to manually copy a vendor bundle into your browser app or link to it without using NPM, ESM or CommonJS, use the [minified IIFE bundle on Unpkg](https://unpkg.com/rung/rung.min.js) or get the source from the [rung.min.js](/maetl/rung/blob/main/rung.min.js) file in this repo.
+If you want to manually copy a vendor bundle into your browser app or link to it without using NPM, ESM or CommonJS, get the source from the minified IIFE bundle [rung.min.js on Unpkg](https://unpkg.com/rung/dist/rung.min.js) or [rung.min.js on jsDelivr](https://cdn.jsdelivr.net/npm/rung/dist/rung.min.js).
 
 ## Usage
 
