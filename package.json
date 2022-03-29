@@ -1,6 +1,6 @@
 {
   "name": "rung",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "type": "module",
   "description": "A randomness toolkit for browser-based game development, simulations and generative methods.",
   "repository": "git@github.com:maetl/rung",
