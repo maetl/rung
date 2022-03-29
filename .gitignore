@@ -1,9 +1,5 @@
 node_modules
-experiments
+dist
 docs
-lib
-NOTES.md
-/index.js
-/rung.js
-/algorithms.js
+types
 .DS_Store

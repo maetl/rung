@@ -13,7 +13,7 @@ export default [
 			},
 			{
 				name: "rung",
-				file: "rung.min.js",
+				file: "dist/rung.min.js",
 				format: "iife",
 				plugins: [terser()]
 			}

@@ -1,14 +1,16 @@
 {
   "name": "rung",
   "version": "0.10.0",
+  "type": "module",
   "description": "A randomness toolkit for browser-based game development, simulations and generative methods.",
   "repository": "git@github.com:maetl/rung",
   "author": "Mark Rickerby",
   "license": "MIT",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "rollup -c",
-    "compile": "tsc",
+    "build": "npm run build:bundle ; npm run build:compile",
+    "build:bundle": "rollup -c",
+    "build:compile": "tsc",
     "test": "ava --verbose"
   },
   "devDependencies": {
@@ -19,23 +21,24 @@
     "typescript": "^4.6.2"
   },
   "module": "src/rung.js",
-  "main": "rung.bundle.cjs",
-  "browser": "src/rung.js",
-  "type": "module",
+  "main": "dist/rung.bundle.cjs",
+  "browser": "dist/src/rung.js",
+  "types": "types/rung.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
       "import": "./src/rung.js",
-      "require": "./rung.bundle.cjs"
+      "require": "./dist/rung.bundle.cjs"
     },
     "./random": "./src/random.js",
-    "./algorithms/": "./src/algorithms/"
+    "./algorithms/": "./src/algorithms/",
+    "./types/": "./types/"
   },
   "files": [
+    "dist",
     "src",
+    "types",
     "README.md",
-    "LICENSE",
-    "rung.bundle.cjs",
-    "rung.min.js"
+    "LICENSE"
   ]
 }
