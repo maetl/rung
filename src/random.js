@@ -9,6 +9,8 @@ class Random {
 
   /**
    * Returns an approximately uniform number within the half-open interval [0..1).
+   *
+   * @return {number}
    */
    number() {
      return this.next();
@@ -19,6 +21,7 @@ class Random {
    *
    * @param {number} min Minimum value of numeric range (inclusive)
    * @param {number} max Maximum value of numeric range (exclusive)
+   * @return {number}
    */
   decimal(min, max) {
     if (max == undefined) {
@@ -33,6 +36,7 @@ class Random {
    *
    * @param {number} min Minimum value of integer range (inclusive)
    * @param {number} max Maximum value of integer range (inclusive)
+   * @return {number}
    */
   integer(min, max) {
     if (max == undefined) {
@@ -44,6 +48,8 @@ class Random {
 
   /**
    * A boolean coin toss.
+   *
+   * @return {boolean}
    */
   boolean() {
     return this.next() > 0.5;
@@ -88,6 +94,11 @@ class Random {
     }
   }
 
+  /**
+   * Get a random angle in radians.
+   *
+   * @return {number}
+   */
   angle() {
     return this.decimal(0, Math.PI * 2 + Number.MIN_VALUE);
   }
