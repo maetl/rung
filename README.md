@@ -120,6 +120,12 @@ Get a real number as a decimal between 10 and 20 (inclusive):
 rng.decimal(10.0, 20.0)
 ```
 
+Gets an approximately uniform number within the half-open interval `[0..1)` (conforms to the same return value as `Math.random` for all PRNG algorithms).
+
+```js
+rng.number()
+```
+
 Get the result of a boolean coin toss (`true` or `false`):
 
 ```js
