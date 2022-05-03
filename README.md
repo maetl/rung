@@ -108,6 +108,18 @@ Get an integer between 10 and 20 (inclusive):
 rng.integer(10, 20)
 ```
 
+Get a real number as a decimal between 0 and 20 (inclusive):
+
+```js
+rng.decimal(20.0)
+```
+
+Get a real number as a decimal between 10 and 20 (inclusive):
+
+```js
+rng.decimal(10.0, 20.0)
+```
+
 Get the result of a boolean coin toss (`true` or `false`):
 
 ```js
