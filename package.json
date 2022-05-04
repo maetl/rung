@@ -22,7 +22,6 @@
   },
   "module": "src/rung.js",
   "main": "dist/rung.bundle.cjs",
-  "browser": "dist/src/rung.js",
   "types": "types/rung.d.ts",
   "sideEffects": false,
   "exports": {
